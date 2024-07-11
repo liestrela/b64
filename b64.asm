@@ -61,11 +61,11 @@ _out3ret:
 _out4ret:
 	ret
 _pad1:
-	mov cl, 61
+	mov cl, 0x3d
 	mov byte [out_b+2], cl
 	jmp _out3ret
 _pad2:
-	mov cl, 61
+	mov cl, 0x3d
 	mov byte [out_b+3], cl
 	jmp _out4ret
 

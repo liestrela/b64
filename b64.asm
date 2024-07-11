@@ -13,6 +13,7 @@ global _start
 
 %include "linux.inc"
 
+; encode 3-octects block to 4 6-bit block according to translation table
 encode_blk:
 	xor edx, edx
 	xor ecx, ecx
@@ -76,12 +77,12 @@ _break0:
 _start:
 	xor eax, eax
 
-	mov [rsp-4], eax ; len = 0
-	mov [rsp-8], eax ; i = 0
+	mov [rsp-4], eax
+	mov [rsp-8], eax
 	
 	_loop0:
 	mov rbx, rsp
-	sub rbx, 9 ; [rsp-9] = c
+	sub rbx, 9 ; [rsp-9]
 	read FD_STDIN, rbx, 1
 	cmp rax, 0
 	jz _break0

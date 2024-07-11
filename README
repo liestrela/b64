@@ -1,0 +1,5 @@
+b64 - base64 encoder for linux x64
+----------------------------------
+compliant to rfc 4648
+written in intel syntax for the netwide assembler
+encodes data from stdin in chunks and outputs to stdout
